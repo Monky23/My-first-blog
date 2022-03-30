@@ -1,0 +1,19 @@
+{
+    "name": "lapai/my-first-blog",
+    "description": "A presentation blog vanilla without framework",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lapai\\MyFirstBlog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Monky23",
+            "email": "lapaixjeanmichel@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

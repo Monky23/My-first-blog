@@ -6,15 +6,15 @@ use Database\DBConnection;
 
 class Controller
 {
-    protected $db;
+    protected $dbconnect;
 
-    public function __construct(DBConnection $db)
+    public function __construct(DBConnection $dbconnect)
     {
-        $this->db = $db;
+        $this->dbconnect = $dbconnect;
     }
 
     protected function getDB()
     {
-        return $this-> db;
+        return $this-> dbconnect;
     }
 }

@@ -4,7 +4,7 @@ namespace Controllers;
 
 use Database\DBConnection;
 
-class Controllers
+class Controller
 {
     protected $db;
 

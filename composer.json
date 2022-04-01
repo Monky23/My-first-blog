@@ -5,11 +5,11 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Lapai\\MyFirstBlog\\": "src/",
-            "Database\\": "Src/Database/",
+            "Database\\": "Database/",
             "Models\\" : "Src/Models/",
             "Controllers\\" : "Src/Controllers/",
-            "Interfaces\\" : "Src/Interfaces/"
+            "Interfaces\\" : "Src/Interfaces/",
+            "VIEWS\\" : "Views/"
         }
     },
     "authors": [

@@ -31,8 +31,8 @@ class BlogController extends Controller
 
     public function tag(int $id)
     {
-        //$tag = (new Tag($this->getDB()))->findById($id);
+        $tag = (new Tag($this->getDB()))->findById($id);
 
-        //return $this->view('blog.tag', compact('tag'));
+        return $this->view('blog.tag', compact('tag'));
     }
 }

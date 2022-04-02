@@ -29,9 +29,9 @@ On the home page, you will have to present the following information:
   - a catchphrase that looks like me (example: "Jean Michel La Paix, the code in action!");
   - a menu allowing to navigate among all the pages of my website;
   - a contact form (upon submission of this form, an e-mail with all this information will be sent to me) with the following fields :
-      1. name/first name,
-      2. contact e-mail,
-      3. message,
+    1. name/first name,
+    2. contact e-mail,
+    3. message,
   - a link to my CV in PDF format;
   - and all the links to the social networks where you can be followed (GitHub, LinkedIn, Twitter...).
 

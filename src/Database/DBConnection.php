@@ -10,7 +10,7 @@ class DBConnection
     private $dbname; //'blogdb_jm'
     private $host;
     private $username; //'root'
-    private $password; //'0000'
+    private $password; //''
     private $pdo;
     //private $port;// = '3306';
     ////private $charset;// = 'utf8mb4';

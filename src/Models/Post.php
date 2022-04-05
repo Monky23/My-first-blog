@@ -42,8 +42,7 @@ HTML;
         $id = $this->db->getPDO()->lastInsertId();
 
         foreach ($relations as $tagId) {
-            $stmt = $this->db->getPDO()->prepare("INSERT post_tag (post_id, tag_id) 
-            VALUES (?, ?)");
+            $stmt = $this->db->getPDO()->prepare("INSERT post_tag (post_id, tag_id) VALUES (?, ?)");
             $stmt->execute([$id, $tagId]);
         }
 
@@ -58,8 +57,7 @@ HTML;
         $result = $stmt->execute([$id]);
 
         foreach ($relations as $tagId) {
-            $stmt = $this->db->getPDO()->prepare("INSERT post_tag (post_id, tag_id) 
-            VALUES (?, ?)");
+            $stmt = $this->db->getPDO()->prepare("INSERT post_tag (post_id, tag_id) VALUES (?, ?)");
             $stmt->execute([$id, $tagId]);
         }
 
@@ -68,5 +66,3 @@ HTML;
         }
     }
 }
-
-

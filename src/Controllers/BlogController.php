@@ -15,6 +15,7 @@ class BlogController extends Controller
 
     public function index()
     {
+        var_dump(true);
         $post = new Post($this->getDB());
         $posts = $post->all();
 

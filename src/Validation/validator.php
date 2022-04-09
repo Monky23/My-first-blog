@@ -2,7 +2,8 @@
 
 namespace Validation;
 
-class Validator {
+class Validator
+{
 
     private $data;
     private $errors;

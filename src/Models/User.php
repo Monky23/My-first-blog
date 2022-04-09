@@ -1,8 +1,9 @@
 <?php
 
-namespace models;
+namespace Models;
 
-class User extends Model {
+class User extends Model
+{
 
     protected $table = 'users';
 

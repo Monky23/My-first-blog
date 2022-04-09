@@ -4,18 +4,17 @@ namespace Controllers;
 
 use Database\DBConnection;
 
-abstract class Controller
-{
+abstract class Controller {
 
-    protected $dbconnect;
+    protected $db;
 
-    public function __construct(DBConnection $dbconnect)
+    public function __construct(DBConnection $db)
     {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
 
-        $this->db = $dbconnect;
+        $this->db = $db;
     }
 
     protected function view(string $path, array $params = null)
@@ -23,9 +22,6 @@ abstract class Controller
         ob_start();
         $path = str_replace('.', DIRECTORY_SEPARATOR, $path);
         require VIEWS . $path . '.php';
-        if ($params) {
-            $params = extract($params);
-        }
         $content = ob_get_clean();
         require VIEWS . 'layout.php';
     }

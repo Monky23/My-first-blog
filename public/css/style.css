@@ -1,0 +1,192 @@
+body{
+    width: 100%;
+    margin: 0;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    /*background-image: url('../img/hiro.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;*/
+}
+#navbarNav{
+    justify-content: center;
+}
+#hero{
+    background: #00000099;
+    backdrop-filter: grayscale(1) contrast(5) blur(1px);
+    padding: 50px;
+    width: 70%;
+    border-radius: 25px;
+}
+h1, #hero h2{
+    text-align: center;
+    color: #e7deb9;
+    font-weight: bold;
+}
+h2, h3{
+    /*text-align: center;*/
+    color: #209d9d;
+    margin: auto !important;
+    padding: 5px;
+}
+h2{
+    font-weight: bold;
+}
+h5{
+    color: #209d9d;
+    font-weight: bold;
+}
+.active{
+    background-color: #e7deb9;
+    color: #ee343f !important;
+    border-radius: 5px;
+}
+.navbar-brand img{
+    border-radius: 50%;
+}
+a:hover{
+    color: #66baba !important;
+}
+.btn-primary{
+    background-color: #66baba !important;
+}
+span, option span{
+    color: #ff0000 !important;
+}
+section, article{
+    margin: auto !important;
+    width: 80%;
+}
+/*#prog{
+    margin: auto;
+}
+.prog, .news{
+    display: flex;
+    justify-content: space-around;
+}
+.prog .card, .news .card{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px !important;
+    text-align: center;
+    margin: 20px;
+    width: 16rem;
+}
+#prog .card img{
+    border-radius: 10px;
+}
+#about div{
+    text-align: center;
+    margin: auto;
+}
+#about div img{
+    margin: auto;
+}
+#contact{
+    padding-bottom: 50px;
+}
+.contact{
+    width: 70%;
+    background-color: #e7deb9;
+    margin: auto;
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 20px 20px #33343688;
+}
+.contact p{
+    text-align: center;
+}
+.contact button{
+    margin: auto !important;
+}*/
+/*#g-map{
+    width: 70%;
+    margin: auto;
+}
+#g-mapin{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 25px;
+    height: 300px;
+    width: 100%;
+    box-shadow: 20px 20px #33343688;
+}*/
+#articles-listing{
+    width: 80%;
+    margin: auto;
+}
+#articles-listing .card img{
+    width: 80%;
+}
+.program-card{
+    border-radius: 25px;
+    padding: 5px;
+    display: flex;
+}
+.program-card img{
+    border-radius: 25px !important;
+}
+.program-card-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.program-card-body-first-part{
+    width: 60%;
+}
+.program-card-body-second-part{
+    width: 30%;
+    text-align: center;
+}
+.booking-width{
+    width: 80%;
+    margin: auto;
+}
+#booking-recap{
+    border: solid 1px #209d9d;
+    border-radius: 5px;
+}
+#booking-recap p{
+    margin: 5px;
+}
+article div{
+    margin: auto !important;
+    width: 80%;
+}
+#confirm{
+    color: #71b808;
+}
+#fail{
+    color: #ff0000;
+}
+.policy{
+    width: 80%;
+    margin: auto;
+}
+#news-carousel{
+    width: 70%;
+    margin: auto;
+}
+footer{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #e7deb966;
+}
+.foot{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 1,3vw;
+    text-align: center;
+}
+#logofoot{
+    width: 50%;
+    border-radius: 50%;
+    margin-left: 80px;
+}

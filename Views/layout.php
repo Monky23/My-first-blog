@@ -8,35 +8,47 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+  <link href="css/style.css" rel="stylesheet">
   <title>Hello, world!</title>
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Blog</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/posts">Les derniers articles</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <?php if (isset($_SESSION['auth'])) : ?>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Se déconnecter</a>
-          </li>
-        <?php endif ?>
-      </ul>
+<body class="container-fluid">
+  <header class="row">
+    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="../img/photoperso.jpg" alt="Photo de numeric experiences" width="50" height="50" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/posts">Les derniers articles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <?php if (isset($_SESSION['auth'])) : ?>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Se déconnecter</a>
+              </li>
+            <?php endif ?>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="hero">
+      <h1>Numeric Experiences</h1>
+      <h2>Des methodes en fonction de vos conditions !</h2>
     </div>
-  </nav>
+  </header>
   <div class="container">
     <?= $content ?>
   </div>

@@ -5,11 +5,13 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Database\\": "Database/",
-            "Models\\" : "Src/Models/",
-            "Controllers\\" : "Src/Controllers/",
-            "Interfaces\\" : "Src/Interfaces/",
-            "VIEWS\\" : "Views/"
+            "Database\\": "src/Database/",
+            "Models\\" : "src/Models/",
+            "Controllers\\" : "src/Controllers/",
+            "Interfaces\\" : "src/Interfaces/",
+            "VIEWS\\" : "Views/",
+            "Router\\" : "Routes/",
+            "Validation\\" : "src/Validation"
         }
     },
     "authors": [

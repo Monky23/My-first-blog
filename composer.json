@@ -10,7 +10,8 @@
             "Controllers\\" : "Src/Controllers/",
             "Interfaces\\" : "Src/Interfaces/",
             "VIEWS\\" : "Views/",
-            "Router\\" : "Routes/"
+            "Router\\" : "Routes/",
+            "Validation\\" : "Src/Validation/"
         }
     },
     "authors": [

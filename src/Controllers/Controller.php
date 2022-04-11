@@ -23,7 +23,7 @@ abstract class Controller {
         $path = str_replace('.', DIRECTORY_SEPARATOR, $path);
         require VIEWS . $path . '.php';
         $content = ob_get_clean();
-        require VIEWS . 'layout.php';
+        require sprintf("%s%s" , VIEWS , 'layout.php');
     }
 
     protected function getDB()

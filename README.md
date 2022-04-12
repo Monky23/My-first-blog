@@ -1,6 +1,9 @@
 # My-first-blog
 
+Create a blog from scratch without framework.
+
 ## Description of the need
+
 The project is to develop my professional blog. 
 This website is divided into two main groups of pages :
 

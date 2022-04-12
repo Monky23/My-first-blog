@@ -14,6 +14,7 @@ define('DB_PWD', '');
 
 //echo "<pre>" . print_r($_SERVER , true) . "</pre>";
 //echo "<pre>" . print_r($_REQUEST , true) . "</pre>";
+var_dump([$_SERVER['REQUEST_METHOD']]);
 
 $router = new Router($_SERVER["REQUEST_URI"]);
 

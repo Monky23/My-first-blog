@@ -27,7 +27,7 @@ class Router
 
     public function run()
     {
-        $serverReqMet = $_SERVER['REQUEST_METHOD'];
+        $serverReqMet = filter_var($_SERVER['REQUEST_METHOD']);
         foreach ($this->routes[$serverReqMet] as $route) {
             if ($route->matches($this->url)) {
                 return $route->execute();

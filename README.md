@@ -1,10 +1,11 @@
+
 # My-first-blog
 
 Create a blog from scratch without framework.
 
 ## Description of the need
 
-The project is to develop my professional blog. 
+The project is to develop my professional blog.
 This website is divided into two main groups of pages :
 
 - pages useful to all visitors ;
@@ -15,15 +16,15 @@ Here is the list of pages that will be accessible from my website:
 - the home page ; //public
 - the page listing all the blog posts ; //public
 - the page displaying a blog post; //public
-- the page allowing to add a blog post ; //for admins 
+- the page allowing to add a blog post ; //for admins
 - the page allowing to modify a blog post ; //for admins
 - the pages allowing to modify/delete a blog post ; //for admins
-- the pages for logging in/registering users. 
-- I have to develop an administration part that will be accessible only to registered and validated users. 
+- the pages for logging in/registering users.
+- I have to develop an administration part that will be accessible only to registered and validated users.
 
 The administration pages will be accessible on conditions and I must ensure the security of the administration part.
 
-## Let's start with the pages that are useful to all users.
+## Let's start with the pages that are useful to all users'!'
 
 On the home page, you will have to present the following information:
 

@@ -33,7 +33,8 @@ abstract class Controller {
 
     protected function isAdmin()
     {
-        $auth = filter_var($_SESSION['auth']);
+        $auth = $_SESSION['auth'];
+        var_dump($auth);
         if (isset($auth) && $auth === 1) {
             return true;
         } else {

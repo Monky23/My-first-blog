@@ -15,7 +15,7 @@
         <?php foreach ($params['posts'] as $post) : ?>
             <tr>
                 <th scope="row"><?= (int)$post->id ?></th>
-                <td><?= addslashes(htmlspecialchars($post->title)) ?></td>
+                <td><?= htmlspecialchars($post->title) ?></td>
                 <td><?= $post->getCreatedAt() ?></td>
                 <td>
                     <a href="/admin/posts/edit/<?= (int)$post->id ?>" class="btn btn-warning">Modifier</a>

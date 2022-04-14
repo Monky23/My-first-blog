@@ -4,7 +4,8 @@ namespace Controllers;
 
 use Database\DBConnection;
 
-abstract class Controller {
+abstract class Controller
+{
 
     protected $db;
 
@@ -32,6 +33,15 @@ abstract class Controller {
     }
 
     protected function isAdmin()
+    {
+        if (isset($_SESSION['auth']) && $_SESSION['auth'] === 1) {
+            return true;
+        } else {
+            return header('Location: /login');
+        }
+    }
+
+    protected function isSubscriber()
     {
         if (isset($_SESSION['auth']) && $_SESSION['auth'] === 1) {
             return true;

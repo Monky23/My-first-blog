@@ -16,21 +16,7 @@
         <p><?= $comment->content ?></p>
     <?php endforeach ?>
     <h3>Ajoutez un commentaire !</h3>
-    <form action="<?= isset($params['comment']) ? "/comments/edit/{$params['comment']->id}" : "/comments/create" ?>" method="post">
-        <div>
-            <label for="title">Donner un titre à votre commentaire :)</label><br />
-            <input type="text" id="title" name="title" value="<?= $params['comment']->title ?? '' ?>" />
-        </div>
-        <div>
-            <label for="pseudo">Auteur</label><br />
-            <input type="text" id="pseudo" name="pseudo" value="<?= $params['comment']->pseudo ?? '' ?>" />
-        </div>
-        <div>
-            <label for="content">Commentaire</label><br />
-            <textarea id="content" name="content"></textarea>
-        </div>
-        <div>
-            <input type="submit" />
-        </div>
-    </form>
-</div>
+
+    <?php if (isset($_SESSION['auth'])) : ?>
+        <a href="/subscriber/comments/create" class="btn btn-success my-3">ajouter un commentaire</a>
+    <?php endif ?>

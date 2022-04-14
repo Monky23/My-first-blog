@@ -5,7 +5,8 @@ namespace Controllers;
 use Models\User;
 use Validation\Validator;
 
-class UserController extends Controller {
+class UserController extends Controller
+{
 
     public function login()
     {
@@ -29,11 +30,21 @@ class UserController extends Controller {
         $user = (new User($this->getDB()))->getByUsername($_POST['username']);
 
         if (password_verify($_POST['password'], $user->password)) {
+            if ($_SESSION['auth'] = (int) $user->admin) {
+                return header('Location: /admin/posts');
+            } elseif ($_SESSION['auth'] = (int) $user->subscriber) {
+                return header('Location: /');
+            }
+        } else {
+            return header('Location: /login');
+        }
+
+        /*if (password_verify($_POST['password'], $user->password)) {
             $_SESSION['auth'] = (int) $user->admin;
             return header('Location: /admin/posts');
         } else {
             return header('Location: /login');
-        }
+        }*/
     }
 
     public function logout()

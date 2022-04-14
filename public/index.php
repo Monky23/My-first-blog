@@ -33,6 +33,13 @@ $router->post('/admin/posts/delete/:id', 'Controllers\Admin\PostController@destr
 $router->get('/admin/posts/edit/:id', 'Controllers\Admin\PostController@edit');
 $router->post('/admin/posts/edit/:id', 'Controllers\Admin\PostController@update');
 
+$router->get('/subscriber', 'Controllers\Subscriber\CommentController@index');
+$router->get('/subscriber/comments/create', 'Controllers\Subscriber\CommentController@create');
+$router->post('/subscriber/comments/create', 'Controllers\Subscriber\CommentController@createComment');
+$router->post('/subscriber/comments/delete/:id', 'Controllers\Subscriber\CommentController@destroy');
+$router->get('/subscriber/comments/edit/:id', 'Controllers\Subscriber\CommentController@edit');
+$router->post('/subscriber/comments/edit/:id', 'Controllers\Subscriber\CommentController@update');
+
 try {
     $router->run();
 } catch (NotRouteFoundException $e) {

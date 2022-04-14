@@ -20,9 +20,11 @@ Here is the list of pages that will be accessible from my website:
 - the page allowing to modify a blog post ; //for admins
 - the pages allowing to modify/delete a blog post ; //for admins
 - the pages for logging in/registering users.
-- I have to develop an administration part that will be accessible only to registered and validated users.
+- I have to develop an administration part that will be accessible
+only to registered and validated users.
 
-The administration pages will be accessible on conditions and I must ensure the security of the administration part.
+The administration pages will be accessible on conditions and
+I must ensure the security of the administration part.
 
 ## Let's start with the pages that are useful to all users'!'
 
@@ -30,16 +32,20 @@ On the home page, you will have to present the following information:
 
 - my name and first name ;
 - a photo and/or a logo;
-- a catchphrase that looks like me (example: "Jean Michel La Paix, the code in action!");
+- a catchphrase that looks like me (example: "JM La Paix, the code in action!");
 - a menu allowing to navigate among all the pages of my website;
-- a contact form (upon submission of this form, an e-mail with all this information will be sent to me) with the following fields :
+- a contact form (upon submission of this form,
+an e-mail with all this information will be sent to me)
+with the following fields :
   1. name/first name,
   2. contact e-mail,
   3. message,
 - a link to my CV in PDF format;
-- and all the links to the social networks where you can be followed (GitHub, LinkedIn, Twitter...).
+- and all the links to the social networks where i can be followed
+(GitHub, LinkedIn, Twitter...).
 
-On the page listing all blog posts (from the most recent to the oldest), you should display the following information for each blog post:
+On the page listing all blog posts (from the most recent to the oldest),
+i should display the following information for each blog post:
 
 - the title ;
 - the date of last modification ;
@@ -55,6 +61,8 @@ On the page showing the details of a blog post, the following information should
 - the date of last update ;
 - the form allowing to add a comment (submitted for validation);
 - the lists of validated and published comments.
-- On the page allowing to modify a blog post, the user has the possibility to modify the title, caption, author and content fields.
+- On the page allowing to modify a blog post,
+the user has the possibility to modify the title, caption, author
+and content fields.
 
 In the footer menu, there should be a link to access the blog administration.

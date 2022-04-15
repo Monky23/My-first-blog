@@ -10,12 +10,17 @@
 <h2>Commentaires</h2>
 <div>
     <?php foreach ($params['post']->getComments() as $comment) : ?>
-        <h3><?= $comment->title ?></h3>
+        <h5><?= $comment->title ?></h5>
         <small><?= $comment->created_date ?></small>
-        <p><?= $comment->pseudo ?></p>
+        <p><?= $comment->username ?></p>
         <p><?= $comment->content ?></p>
+        <?php if (isset($_SESSION['auth'])) : ?>
+        <a href="/subscriber/comments/edit/<?= $comment->id ?>" class="btn btn-warning">Modifier</a>
+        <form action="/subscriber/comments/delete/<?= $comment->id ?>" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
+        <?php endif ?>
     <?php endforeach ?>
-    <h3>Ajoutez un commentaire !</h3>
 
     <?php if (isset($_SESSION['auth'])) : ?>
         <a href="/subscriber/comments/create" class="btn btn-success my-3">ajouter un commentaire</a>

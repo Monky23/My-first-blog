@@ -6,7 +6,7 @@ use Exceptions\NotRouteFoundException;
 require '../vendor/autoload.php';
 
 define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Views' . DIRECTORY_SEPARATOR);
-//define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
+define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 define('DB_NAME', 'blogdb_jm');
 define('DB_HOST', '127.0.0.1');
 define('DB_USER', 'root');

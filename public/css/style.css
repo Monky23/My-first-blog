@@ -36,7 +36,7 @@ h1,
 
 h2,
 h3 {
-    /*text-align: center;*/
+    text-align: center;
     color: #209d9d;
     margin: auto !important;
     /*padding: 5px;*/
@@ -104,11 +104,12 @@ article {
 }
 #about div img{
     margin: auto;
-}
-#contact{
+}*/
+#contact {
     padding-bottom: 50px;
 }
-.contact{
+
+.contact {
     width: 70%;
     background-color: #e7deb9;
     margin: auto;
@@ -116,24 +117,29 @@ article {
     border-radius: 25px;
     box-shadow: 20px 20px #33343688;
 }
-.contact p{
+
+.contact p {
     text-align: center;
 }
-.contact button{
+
+.contact button {
     margin: auto !important;
-}*/
-/*#g-map{
+}
+
+#g-map {
     width: 70%;
     margin: auto;
 }
-#g-mapin{
+
+#g-mapin {
     margin-top: 25px;
     margin-bottom: 25px;
     border-radius: 25px;
     height: 300px;
     width: 100%;
     box-shadow: 20px 20px #33343688;
-}*/
+}
+
 #articles-listing {
     width: 80%;
     margin: auto;
@@ -196,15 +202,11 @@ article div {
     color: #ff0000;
 }
 
-.policy {
+
+/*.policy {
     width: 80%;
     margin: auto;
-}
-
-#news-carousel {
-    width: 70%;
-    margin: auto;
-}
+}*/
 
 footer {
     padding: 10px;

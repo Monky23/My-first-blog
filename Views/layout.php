@@ -5,10 +5,12 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <!-- Fontawesome link -->
+  <script src="https://kit.fontawesome.com/e4eed1bb33.js" crossorigin="anonymous"></script>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link href="css/style.css" rel="stylesheet">
+  <!-- My own CSS -->
+  <link href="/css/style.css" rel="stylesheet">
   <title>Hello, world!</title>
 </head>
 
@@ -49,9 +51,42 @@
       <h2>Des methodes en fonction de vos conditions !</h2>
     </div>
   </header>
-  <div class="container">
-    <?= $content ?>
-  </div>
+  <main>
+    <div class="container">
+      <?= $content ?>
+    </div>
+  </main>
+  <footer class="row">
+    <div class="col-md-4 foot">
+      <div><i class="fas fa-map-marker-alt"></i>
+        Numeric Experiences<br>
+        23 Rue des Martyrs<br>
+        75009 Paris
+      </div>
+      <div><i class="fas fa-mobile-alt"></i>
+        +33 6 88 88 88 88
+      </div>
+      <div><i class="fas fa-envelope"></i>
+        <a href="mailto:lapaixjeanmichel@gmail.com" title="envoyez moi un mail en cliquant sur ce lien">Join Us by email</a>
+      </div>
+    </div>
+    <div class="col-md-4 foot">
+      <img src="../img/photoperso.jpg" alt="photo de numeric experiences" id="logofoot">
+    </div>
+    <div class="col-md-4 foot">
+      <a href="/login" title="lien vers la politique de confidentialités">Connexion</a><br>
+      <div>
+        <h3>Rendez-vous sur les réseaux sociaux</h3>
+        <a href="https://www.facebook.com/jeanmichel.lapaix.927" target="_blank" title="lien vers mon profil facebook"><i class="fab fa-facebook-square fa-3x"></i>
+        </a>
+        <a href="https://www.instagram.com/jeanmichel.experiences/?hl=fr" target="_blank" title="lien vers mon profil instagram"><i class="fab fa-instagram fa-3x"></i></a>
+        <a href="https://twitter.com/paix_jean" target="_blank" title="lien vers mon profil twitter"><i class="fab fa-twitter fa-3x"></i></a>
+        <a href="https://www.linkedin.com/in/jean-michel-la-paix-246975129/" target="_blank" title="lien vers mon profil linkedin"><i class="fab fa-linkedin fa-3x"></i></a>
+        <a href="https://github.com/Monky23" target="_blank" title="lien vers mon profil Github"><i class="fab fa-github fa-3x"></i></a>
+      </div>
+    </div>
+  </footer>
+
 
   <!-- Optional JavaScript; choose one of the two! -->
 

@@ -1,7 +1,7 @@
 <h1>Veuillez saisir votre commentaire</h1>
 <h1><?= $params['comment']->title ?? 'Créer un commentaire' ?></h1>
 
-<form action="<?= isset($params['comment']) ? "/subcriber/comments/edit/{$params['comment']->id}" : "/subcriber/comments/create" ?>" method="POST">
+<form action="<?= isset($params['comment']) ? "/subscriber/comments/edit/{$params['comment']->id}" : "/subscriber/comments/create" ?>" method="POST">
     <div class="form-group">
         <label for="title">Vous pouvez donnez un titre à votre commentaire</label>
         <input type="text" class="form-control" name="title" id="title" value="<?= $params['comment']->title ?? '' ?>">

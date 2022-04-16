@@ -11,7 +11,8 @@
             "Interfaces\\" : "src/Interfaces/",
             "VIEWS\\" : "Views/",
             "Router\\" : "Routes/",
-            "Validation\\" : "src/Validation"
+            "Validation\\" : "src/Validation",
+            "Exceptions\\" : "src/Exceptions"
         }
     },
     "authors": [

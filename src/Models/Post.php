@@ -9,7 +9,7 @@ class Post extends Model
 
     protected $table = 'posts';
 
-    public function getCreatedAt(): string
+    public function getCreatedAt(): string//à implémenter dans un Trait
     {
         return (new DateTime($this->created_date))->format('d/m/Y à H:i');
     }

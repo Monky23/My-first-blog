@@ -18,7 +18,7 @@
         <a href="/subscriber/comments/edit/<?= $comment->id ?>" class="btn btn-warning">Modifier</a>
         <form action="/subscriber/comments/delete/<?= $comment->id ?>" method="POST" class="d-inline">
             <button type="submit" class="btn btn-danger">Supprimer</button>
-        </form>
+        </form><br>
         <?php endif ?>
     <?php endforeach ?>
 

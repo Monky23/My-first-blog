@@ -22,7 +22,7 @@ class CommentController extends Controller {
 
         $tags = (new Comment($this->getDB()))->all();
 
-        return $this->view('subscriber.comment.formcomment');
+        return $this->view('blog.post.show');
     }
 
     public function createComment()
@@ -34,7 +34,7 @@ class CommentController extends Controller {
         $result = $comment->create($_POST);
 
         if ($result) {
-            return header('Location: /posts/:id');
+            return header('Location: /posts');
         }
     }
 

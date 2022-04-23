@@ -140,13 +140,16 @@ article {
     box-shadow: 20px 20px #33343688;
 }
 
-#articles-listing {
+#articles-listing,
+#comments-listing {
     width: 80%;
     margin: auto;
 }
 
 #articles-listing .card img {
     width: 80%;
+    border-radius: 5px;
+    border: #209d9d 1px solid;
 }
 
 .program-card {
@@ -224,6 +227,6 @@ footer {
 
 #logofoot {
     width: 50%;
-    border-radius: 50%;
+    border-radius: 25px;
     margin-left: 80px;
 }

@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-xl navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
-          <img src="../img/photoperso.jpg" alt="Photo de numeric experiences" width="50" height="50" class="d-inline-block align-text-top">
+          <img src="/img/photoperso.jpg" alt="Photo de numeric experiences" width="50" height="50" class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -71,7 +71,7 @@
       </div>
     </div>
     <div class="col-md-4 foot">
-      <img src="../img/photoperso.jpg" alt="photo de numeric experiences" id="logofoot">
+      <img src="/img/logo.png" alt="photo de numeric experiences" id="logofoot">
     </div>
     <div class="col-md-4 foot">
       <a href="/login" title="lien vers la politique de confidentialités">Connexion</a><br>

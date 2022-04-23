@@ -4,7 +4,8 @@ namespace Controllers;
 
 use Database\DBConnection;
 
-abstract class Controller {
+abstract class Controller
+{
 
     protected $db;
 
@@ -23,7 +24,7 @@ abstract class Controller {
         $path = str_replace('.', DIRECTORY_SEPARATOR, $path);
         require VIEWS . $path . '.php';
         $content = ob_get_clean();
-        require sprintf("%s%s" , VIEWS , 'layout.php');
+        require sprintf("%s%s", VIEWS, 'layout.php');
     }
 
     protected function getDB()
@@ -33,8 +34,16 @@ abstract class Controller {
 
     protected function isAdmin()
     {
-        $auth = $_SESSION['auth'];
-        if (isset($auth) && $auth === 1) {
+        if (isset($_SESSION['auth']) && $_SESSION['auth'] === 1) {
+            return true;
+        } else {
+            return header('Location: /login');
+        }
+    }
+
+    protected function isSubscriber()
+    {
+        if (isset($_SESSION['auth']) && $_SESSION['auth'] === 1) {
             return true;
         } else {
             return header('Location: /login');

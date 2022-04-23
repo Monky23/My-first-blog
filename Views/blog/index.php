@@ -5,9 +5,9 @@
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4 mb-3 mt-3">
-                    <img src="../img/photoperso.jpg" 
-                            class="img-fluid rounded-start" 
-                            alt="">
+                    <img src="/img/logo.png" 
+                    class="img-fluid rounded-start" 
+                    alt="">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -18,7 +18,7 @@
                             <?php foreach ($post->getTags() as $tag) : ?>
                                 <span class="badge bg-info">
                                     <a href="/tags/<?= (int)$tag->id ?>" class="text-white">
-                                        <?= htmlspecialchars($tag->name) ?>
+                                    <?= htmlspecialchars($tag->name) ?>
                                     </a>
                                 </span>
                             <?php endforeach ?>

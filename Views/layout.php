@@ -6,12 +6,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Fontawesome link -->
-  <script src="https://kit.fontawesome.com/e4eed1bb33.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/e4eed1bb33.js" 
+    crossorigin="anonymous">
+  </script>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+    crossorigin="anonymous">
   <!-- My own CSS -->
   <link href="/css/style.css" rel="stylesheet">
-  <title>Numeric Exeriences  - Un Blog à part!</title>
+  <title>Numeric Experiences - Blog à part</title>
 </head>
 
 <body class="container-fluid">
@@ -19,9 +24,12 @@
     <nav class="navbar navbar-expand-xl navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
-          <img src="../img/photoperso.jpg" alt="Photo de numeric experiences" width="50" height="50" class="d-inline-block align-text-top">
+          <img src="/img/photoperso.jpg" alt="Photo de numeric experiences" 
+          width="50" height="50" class="d-inline-block align-text-top">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+        aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -64,25 +72,36 @@
         75009 Paris
       </div>
       <div><i class="fas fa-mobile-alt"></i>
-        +33 6 88 88 88 88
+        <a href="tel:+33 6 88 88 88 88"></a>
       </div>
       <div><i class="fas fa-envelope"></i>
-        <a href="mailto:lapaixjeanmichel@gmail.com" title="envoyez moi un mail en cliquant sur ce lien">Join Us by email</a>
+        <a href="mailto:lapaixjeanmichel@gmail.com" 
+        title="envoyez moi un mail en cliquant sur ce lien">Join Us by email
+        </a>
       </div>
     </div>
     <div class="col-md-4 foot">
-      <img src="../img/photoperso.jpg" alt="photo de numeric experiences" id="logofoot">
+      <img src="/img/logo.png" alt="logo de numeric experiences" id="logofoot">
     </div>
     <div class="col-md-4 foot">
       <a href="/login" title="lien vers la politique de confidentialités">Connexion</a><br>
       <div>
         <h3>Rendez-vous sur les réseaux sociaux</h3>
-        <a href="https://www.facebook.com/jeanmichel.lapaix.927" target="_blank" title="lien vers mon profil facebook"><i class="fab fa-facebook-square fa-3x"></i>
+        <a href="https://www.facebook.com/jeanmichel.lapaix.927" 
+        target="_blank" title="lien vers mon profil facebook">
+        <i class="fab fa-facebook-square fa-3x"></i>
         </a>
-        <a href="https://www.instagram.com/jeanmichel.experiences/?hl=fr" target="_blank" title="lien vers mon profil instagram"><i class="fab fa-instagram fa-3x"></i></a>
-        <a href="https://twitter.com/paix_jean" target="_blank" title="lien vers mon profil twitter"><i class="fab fa-twitter fa-3x"></i></a>
-        <a href="https://www.linkedin.com/in/jean-michel-la-paix-246975129/" target="_blank" title="lien vers mon profil linkedin"><i class="fab fa-linkedin fa-3x"></i></a>
-        <a href="https://github.com/Monky23" target="_blank" title="lien vers mon profil Github"><i class="fab fa-github fa-3x"></i></a>
+        <a href="https://www.instagram.com/jeanmichel.experiences/?hl=fr" 
+          target="_blank" title="lien vers mon profil instagram">
+          <i class="fab fa-instagram fa-3x"></i></a>
+        <a href="https://twitter.com/paix_jean" 
+          target="_blank" title="lien vers mon profil twitter">
+          <i class="fab fa-twitter fa-3x"></i></a>
+        <a href="https://www.linkedin.com/in/jean-michel-la-paix-246975129/" 
+          target="_blank" title="lien vers mon profil linkedin">
+          <i class="fab fa-linkedin fa-3x"></i></a>
+        <a href="https://github.com/Monky23" target="_blank" 
+          title="lien vers mon profil Github"><i class="fab fa-github fa-3x"></i></a>
       </div>
     </div>
   </footer>

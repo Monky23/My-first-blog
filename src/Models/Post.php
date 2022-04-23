@@ -9,7 +9,7 @@ class Post extends Model
 
     protected $table = 'posts';
 
-    public function getCreatedAt(): string
+    public function getCreatedAt(): string //à implémenter dans un Trait
     {
         return (new DateTime($this->created_date))->format('d/m/Y à H:i');
     }
@@ -32,6 +32,14 @@ HTML;
             SELECT t.* FROM tags t
             INNER JOIN post_tag pt ON pt.tag_id = t.id
             WHERE pt.post_id = ?
+        ", [$this->id]);
+    }
+
+    public function getComments()
+    {
+        return $this->query("
+            SELECT c.* FROM comments c
+            WHERE c.post_id = ?
         ", [$this->id]);
     }
 

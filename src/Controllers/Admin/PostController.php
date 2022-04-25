@@ -6,7 +6,8 @@ use Controllers\Controller;
 use Models\Post;
 use Models\Tag;
 
-class PostController extends Controller {
+class PostController extends Controller
+{
 
     public function index()
     {
@@ -77,4 +78,5 @@ class PostController extends Controller {
             return header('Location: /admin/posts');
         }
     }
+
 }

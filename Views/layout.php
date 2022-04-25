@@ -49,6 +49,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="/logout">Se déconnecter</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin/posts">Posts admin</a>
+              </li>
             <?php endif ?>
           </ul>
         </div>
@@ -72,7 +75,7 @@
         75009 Paris
       </div>
       <div><i class="fas fa-mobile-alt"></i>
-        <a href="tel:+33 6 88 88 88 88"></a>
+        <a href="tel:+33 6 88 88 88 88">+33 6 88 88 88 88</a>
       </div>
       <div><i class="fas fa-envelope"></i>
         <a href="mailto:lapaixjeanmichel@gmail.com" 

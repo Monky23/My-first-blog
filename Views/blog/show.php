@@ -11,7 +11,9 @@
         <small class="text-info">Publié le <?= $params['post']->getCreatedAt() ?></small>
     </div>
     <p><?= nl2br(htmlspecialchars($params['post']->chapo)) ?></p>
-    <img src="uploads/<?= htmlspecialchars($params['post']->ft_image) ?? '' ?>" alt="">
+    <div>
+        <img src="/uploads/<?= htmlspecialchars($params['post']->ft_image) ?>" alt="" width="100%">
+    </div>
     <p><?= nl2br(htmlspecialchars($params['post']->content)) ?></p>
     <a href="/posts" class="btn btn-secondary">Les derniers articles</a>
 </article>

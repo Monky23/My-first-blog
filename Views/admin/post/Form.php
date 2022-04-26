@@ -34,10 +34,11 @@
         </select>
     </div>
     <div class="mb-3  form-group">
-        <img src="uploads/<?= $params['post']->ft_image ?? '' ?>" alt="">
+        <img src="/uploads/<?= $params['post']->ft_image ?>" alt="" width="80%">
+        <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
+        <p>Choisissez une photo avec une taille inférieure à 2 Mo.</p>
         <label for="ft_image" class="form-label">Image de l'article</label>
-        <input type="file" class="form-control" id="ft_image" name="ft_image" 
-        value="<?= $params['post']->ft_image ?? '' ?>" />
+        <input type="file" class="form-control" id="ft_image" name="ft_image" >
     </div>
     <button type="submit" class="btn btn-primary"><?= isset($params['post']) ?
     'Enregistrer les modifications' : 'Enregistrer mon article' ?></button>

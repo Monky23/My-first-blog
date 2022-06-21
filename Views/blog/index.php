@@ -27,7 +27,7 @@
                             Publié le <?= $post->getCreatedAt() ?>
                         </small>
                         <p class="card-text"><?= $post->getExcerpt() ?></p>
-                        <?= $post->getButton() ?>
+                        <a href="/posts/<?= (int)$post->id ?>" class="btn btn-primary">Lire l'article</a>
                     </div>
                 </div>
             </div>

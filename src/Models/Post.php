@@ -19,12 +19,19 @@ class Post extends Model
         return substr($this->content, 0, 200) . '...';
     }
 
-    public function getButton(): string
+    public function getPublishedPosts(): array
+    {
+        return $this->query("SELECT * FROM {$this->table} 
+        WHERE posts.published = 1
+        ORDER BY created_date DESC");
+    }
+
+    /*public function getButton(): string
     {
         return <<<HTML
         <a href="/posts/$this->id" class="btn btn-primary">Lire l'article</a>
 HTML;
-    }
+    }*/
 
     public function getTags()
     {
@@ -58,7 +65,7 @@ HTML;
         return true;
     }
 
-    public function insert(?array $relations = null)
+    /*public function insert(?array $relations = null)
     {
         if (
             !empty($_POST['title']) &&
@@ -84,7 +91,7 @@ HTML;
         }
 
         return true;
-    }
+    }*/
 
     public function update(int $id, array $data, ?array $relations = null)
     {
@@ -94,7 +101,8 @@ HTML;
         $result = $stmt->execute([$id]);
 
         foreach ($relations as $tagId) {
-            $stmt = $this->db->getPDO()->prepare("INSERT post_tag (post_id, tag_id) VALUES (?, ?)");
+            $stmt = $this->db->getPDO()->prepare("INSERT post_tag (post_id, tag_id) 
+            VALUES (?, ?)");
             $stmt->execute([$id, $tagId]);
         }
 

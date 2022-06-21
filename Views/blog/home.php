@@ -3,7 +3,7 @@
 <section id="who" class="row">
     <h2>Qui suis-je?</h2>
     <div class="col-md-8 col-sm-8 col-lg-8">
-        <p>Issu d'un parcours professionnel riche et variés, j'ai acquis une expèrience
+        <p>Issu d'un parcours professionnel riche et varié, j'ai acquis une expèrience
             dans divers secteurs d'activités comme la grande distribution, le commerce de
             détail, la restauration, l'hôtellerie, l'agriculture et l'industrie.</p>
         <p>Suite à une totale reconversion, j'ai suivi une formation de référent numérique au sein de

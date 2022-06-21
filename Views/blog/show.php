@@ -12,7 +12,7 @@
     </div>
     <p><?= nl2br(htmlspecialchars($params['post']->chapo)) ?></p>
     <div>
-        <img src="/uploads/<?= htmlspecialchars($params['post']->ft_image) ?>" alt="" width="100%">
+        <img src="/uploads/<?= htmlspecialchars($params['post']->picture) ?>" alt="" width="100%">
     </div>
     <p><?= nl2br(htmlspecialchars($params['post']->content)) ?></p>
     <a href="/posts" class="btn btn-secondary">Les derniers articles</a>

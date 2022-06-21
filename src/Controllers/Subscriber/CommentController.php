@@ -60,12 +60,12 @@ class CommentController extends Controller {
         }
     }
 
-    public function destroy(int $id)
+    public function delete(int $id)
     {
         $this->isSubscriber()  || $this->isAdmin();
 
         $comment = new Comment($this->getDB());
-        $result = $comment->destroy($id);
+        $result = $comment->delete($id);
 
         if ($result) {
             return header('Location: /posts');

@@ -1,7 +1,7 @@
 <h2><?= $params['post']->title ?? 'Créer un nouvel article' ?></h2>
 
 <form action="<?= isset($params['post']) ? "/admin/posts/edit/{$params['post']->id}" 
-: "/admin/posts/create" ?>" enctype="multipart/form-data" method="POST">
+: "/admin/posts/create/" ?>" enctype="multipart/form-data" method="POST">
     <div class="form-group">
         <label for="title">Titre de l'article</label>
         <input type="text" class="form-control" name="title" id="title" 
@@ -13,11 +13,21 @@
             <?= $params['post']->chapo ?? '' ?>
         </textarea>
     </div>
+    <div class="mb-3 form-group">
+        <img src="/uploads/<?= $params['post']->picture ?? '' ?>" alt="" width="80%">
+        <label for="picture" class="form-group">picture de l'article</label>
+        <input type="file" class="form-control" id="picture" name="picture"/>
+    </div>
     <div class="form-group">
         <label for="content">Contenu de l'article</label>
         <textarea name="content" id="content" rows="8" class="form-control">
             <?= $params['post']->content ?? '' ?>
         </textarea>
+    </div>
+    <div class="form-check form-group">
+        <input type="hidden" name="published" value="0">
+        <input type="checkbox" name="published" value="1" class="form-check-input" id="published">
+        <label class="form-check-label" for="published">Publier</label>
     </div>
     <div class="form-group">
         <label for="tags">Tags de l'article</label>
@@ -33,13 +43,7 @@
             <?php endforeach ?>
         </select>
     </div>
-    <div class="mb-3  form-group">
-        <img src="/uploads/<?= $params['post']->ft_image ?>" alt="" width="80%">
-        <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
-        <p>Choisissez une photo avec une taille inférieure à 2 Mo.</p>
-        <label for="ft_image" class="form-label">Image de l'article</label>
-        <input type="file" class="form-control" id="ft_image" name="ft_image" >
-    </div>
-    <button type="submit" class="btn btn-primary"><?= isset($params['post']) ?
-    'Enregistrer les modifications' : 'Enregistrer mon article' ?></button>
+
+    <input type="submit" class="btn btn-primary"><?= isset($params['post']) ?
+    'Enregistrer les modifications' : 'Enregistrer mon article' ?>
 </form>

@@ -5,7 +5,7 @@
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4 mb-3 mt-3">
-                    <img src="/img/logo.png" 
+                    <img src="/uploads/<?= htmlspecialchars($post->picture) ?>" 
                     class="img-fluid rounded-start" 
                     alt="">
                 </div>

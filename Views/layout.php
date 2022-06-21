@@ -41,7 +41,7 @@
               <a class="nav-link" href="/posts">Les derniers articles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="/registration">Inscription</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">

@@ -5,7 +5,7 @@ namespace Models;
 use PDO;
 use Database\DBConnection;
 
-abstract class Model
+class Model
 {
 
     protected $db;
@@ -59,7 +59,7 @@ abstract class Model
         return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} WHERE id = :id", $data);
     }
 
-    public function destroy(int $id): bool
+    public function delete(int $id): bool //TODO : nommage a revoir
     {
         return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id]);
     }

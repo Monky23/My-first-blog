@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Database\DBConnection;
+use Exception;
 
 abstract class Controller
 {
@@ -32,13 +33,15 @@ abstract class Controller
         return $this->db;
     }
 
-    protected function isAdmin()
-    {
-        if (isset($_SESSION['auth']) && $_SESSION['auth'] === 1) {
+    /**
+     * @throws Exception
+     */
+    protected function isAdmin(): bool
+    {        
+        if (isset($_SESSION['auth']) && $_SESSION['auth'] === 1)
             return true;
-        } else {
-            return header('Location: /login');
-        }
+
+        throw new Exception("Vous n'êtes pas admin");
     }
 
     protected function isSubscriber()

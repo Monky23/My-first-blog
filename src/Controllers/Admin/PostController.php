@@ -3,6 +3,7 @@
 namespace Controllers\Admin;
 
 use Controllers\Controller;
+use Exception;
 use Models\Post;
 use Models\Tag;
 
@@ -11,11 +12,18 @@ class PostController extends Controller
 
     public function index()
     {
-        $this->isAdmin();
+        try {
+            $this->isAdmin();
 
-        $posts = (new Post($this->getDB()))->all();
+            //var_dump($this->isAdmin());
 
-        return $this->view('admin.post.index', compact('posts'));
+            $posts = (new Post($this->getDB()))->all();
+    
+            return $this->view('admin.post.index', compact('posts'));
+        } catch (Exception $e) {
+            // retourner une erreur
+        }
+
     }
 
     public function create()
@@ -29,16 +37,24 @@ class PostController extends Controller
 
     public function createPost()
     {
-        $this->isAdmin();
+        try {
+            $this->isAdmin();
 
-        $post = new Post($this->getDB());
+            $post = new Post($this->getDB());
 
-        $tags = array_pop($_POST);
+            $this->getUploadFile();
 
-        $result = $post->create($_POST, $tags);
+            $tags = array_pop($_POST);
+            $array = $_POST;
+            $array['picture'] = $_FILES['picture']['name'];
 
-        if ($result) {
-            return header('Location: /admin/posts');
+            $result = $post->create($array, $tags);
+
+            if ($result) {
+                return header('Location: /admin/posts');
+            }
+        } catch (Exception $e) {
+            // retourner une erreur
         }
     }
 
@@ -58,25 +74,48 @@ class PostController extends Controller
 
         $post = new Post($this->getDB());
 
-        $tags = array_pop($_POST);
+        $this->getUploadFile();
 
-        $result = $post->update($id, $_POST, $tags);
+        $tags = array_pop($_POST);
+        $array = $_POST;
+        $array['picture'] = $_FILES['picture']['name'];
+
+        $result = $post->update($id, $array, $tags);
 
         if ($result) {
             return header('Location: /admin/posts');
         }
     }
 
-    public function destroy(int $id)
+    public function delete(int $id)
     {
         $this->isAdmin();
 
         $post = new Post($this->getDB());
-        $result = $post->destroy($id);
+        $result = $post->delete($id);
 
         if ($result) {
             return header('Location: /admin/posts');
         }
     }
 
+    public function getUploadFile()
+    {
+        $uploaddir = 'uploads/';
+
+        $uploadfile = $uploaddir . basename($_FILES['picture']['name']);
+
+        echo '<pre>';
+        if (move_uploaded_file($_FILES['picture']['tmp_name'], $uploadfile)) {
+            echo "Le fichier est valide, et a été téléchargé
+                   avec succès. Voici plus d'informations :\n";
+        } else {
+            echo "Attaque potentielle par téléchargement de fichiers.
+                  Voici plus d'informations :\n";
+        }
+
+        echo '<pre>';
+    }
+
 }
+

@@ -48,6 +48,35 @@ HTML;
         parent::create($data);
 
         $id = $this->db->getPDO()->lastInsertId();
+        var_dump($id);
+
+        foreach ($relations as $tagId) {
+            $stmt = $this->db->getPDO()->prepare("INSERT post_tag (post_id, tag_id) VALUES (?, ?)");
+            $stmt->execute([$id, $tagId]);
+        }
+
+        return true;
+    }
+
+    public function insert(?array $relations = null)
+    {
+        if (
+            !empty($_POST['title']) &&
+            !empty($_POST['content']) &&
+            !empty($_FILES['picture']['name']) &&
+            !empty($_POST['chapo'])
+        ) {
+            $title = htmlspecialchars($_POST['title']);
+            $content = htmlspecialchars($_POST['content']);
+            $chapo = htmlspecialchars($_POST['chapo']);
+            $picture = basename($_FILES['picture']['name']);
+
+            return $this->query("INSERT INTO posts 
+            (title, chapo, content, picture)
+            VALUES($title, $chapo, $content, $picture)");
+        }
+
+        $id = $this->db->getPDO()->lastInsertId();
 
         foreach ($relations as $tagId) {
             $stmt = $this->db->getPDO()->prepare("INSERT post_tag (post_id, tag_id) VALUES (?, ?)");

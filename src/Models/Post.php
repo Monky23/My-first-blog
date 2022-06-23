@@ -47,6 +47,7 @@ HTML;
         return $this->query("
             SELECT c.* FROM comments c
             WHERE c.post_id = ?
+            AND c.published = 1
         ", [$this->id]);
     }
 

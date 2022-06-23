@@ -23,8 +23,14 @@ class Model
 
     public function findById(int $id): Model
     {
-        return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true);
+        return $this->query("SELECT * FROM {$this->table} WHERE id = ? LIMIT 1", [$id], true);
     }
+
+    /*public function getOne(int $id) {
+        $req = "SELECT * FROM {$this->table} WHERE id = ? LIMIT 1";
+        $stmt = $this->prepare($req , [$id]);
+        return $this->query($stmt)->fetch();
+    }*/
 
     public function create(array $data, ?array $relations = null)
     {

@@ -41,7 +41,6 @@ class UserController extends Controller
         } else {
             return header('Location: /login');
         }
-
     }
 
     public function logout()
@@ -56,14 +55,14 @@ class UserController extends Controller
         return $this->view('subscriber.registration');
     }
 
-    private function _checkAndSanitizeStr(string $str, int $minLen = 3): string
+    /*private function _checkAndSanitizeStr(string $str, int $minLen = 3): string
     {
         if (empty($str) || strlen($str) < $minLen || is_string($str))
             throw new Exception("Vérifier les données");
         return htmlspecialchars($str);
-    }
+    }*/
 
-    private function prepareDataForUserCreation(): array
+    /*private function prepareDataForUserCreation(): array
     {
 
         $dto = [];
@@ -81,15 +80,15 @@ class UserController extends Controller
         /*if ($this->userExists($dto["email"]))
             throw new Exception("Cette adresse mail est déjà utlisée pour un compte existant");*/
 
-        /*
+    /*
         [
             "username" => "nom",
             "email" => "email",
             "password" => "Hashedpassword"
         ]
-        */
+        
         return $dto;
-    }
+    }*/
 
     public function registrationPost()
     {
@@ -107,12 +106,13 @@ class UserController extends Controller
             header('Location: /registration');
             exit;
         }
-            $user = new User($this->getDB());
-            unset($_POST["password_retype"]);
-            $result = $user->create($_POST);
-            if ($result) {
-                return header('Location: /login');
-            }
+        $user = new User($this->getDB());
+        $array = $_POST;
+        $array["password"] = password_hash($array["password_retype"], PASSWORD_ARGON2I);
+        unset($array["password_retype"]);
+        $result = $user->create($array);
+        if ($result) {
+            return header('Location: /login');
+        }
     }
-    
 }

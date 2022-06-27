@@ -14,9 +14,10 @@
         </textarea>
     </div>
     <div class="mb-3 form-group">
+        <label for="picture" class="form-group">image de l'article</label><br>
         <img src="/uploads/<?= $params['post']->picture ?? '' ?>" alt="" width="80%">
-        <label for="picture" class="form-group">picture de l'article</label>
-        <input type="file" class="form-control" id="picture" name="picture"/>
+        <input type="file" class="form-control" id="picture" name="picture" 
+        value="<?= $params['post']->title ?? '' ?>"/>
     </div>
     <div class="form-group">
         <label for="content">Contenu de l'article</label>
@@ -26,7 +27,8 @@
     </div>
     <div class="form-check form-group">
         <input type="hidden" name="published" value="0">
-        <input type="checkbox" name="published" value="1" class="form-check-input" id="published">
+        <input type="checkbox" name="published" value="1" class="form-check-input" 
+        id="published">
         <label class="form-check-label" for="published">Publier</label>
     </div>
     <div class="form-group">

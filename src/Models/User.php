@@ -21,8 +21,22 @@ class User extends Model
         WHERE email = ?", [$useremail], true);
     }
 
-    public function userExists(string $email): bool
+    public function userExistsByEmail(string $email): bool
     {
         return $this->getByUserEmail($email) instanceof User;
+    }
+
+    public function userExistsByUsername(string $username): bool
+    {
+        return $this->getByUsername($username) instanceof User;
+    }
+
+        public function unic(string $name)
+    {
+        if ($this->userExistsByEmail || $this->userExistsByUsername) {
+            $e = new Exception("Ce pseudo ou ce mail sont déjà utiliser veuillez 
+            choisir un autre pseudo ou une autre adresse email.");
+            echo $e->getMessage();
+        }
     }
 }

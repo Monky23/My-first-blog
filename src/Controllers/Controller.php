@@ -44,7 +44,7 @@ abstract class Controller
         throw new Exception("Vous n'êtes pas admin");
     }
 
-    protected function isSubscriber()
+    protected function isSubscriber(): bool
     {
         if (isset($_SESSION['auth']) && $_SESSION['auth'] === 1) {
             return true;

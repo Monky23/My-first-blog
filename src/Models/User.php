@@ -31,12 +31,4 @@ class User extends Model
         return $this->getByUsername($username) instanceof User;
     }
 
-        public function unic(string $name)
-    {
-        if ($this->userExistsByEmail || $this->userExistsByUsername) {
-            $e = new Exception("Ce pseudo ou ce mail sont déjà utiliser veuillez 
-            choisir un autre pseudo ou une autre adresse email.");
-            echo $e->getMessage();
-        }
-    }
 }

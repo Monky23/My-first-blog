@@ -22,6 +22,9 @@ class Validator
                         case 'required':
                             $this->required($name, $this->data[$name]);
                             break;
+                        case 'onlyString':
+                            $this->_checkAndSanitizeStr($name, $this->data[$name]);
+                            break;
                         case substr($rule, 0, 3) === 'min':
                             $this->min($name, $this->data[$name], $rule);
                         default:
@@ -51,6 +54,14 @@ class Validator
 
         if (strlen($value) < $limit) {
             $this->errors[$name][] = "{$name} doit comprendre un minimum de {$limit} caractères";
+        }
+    }
+
+    private function _checkAndSanitizeStr(string $name, string $value)
+    {
+        $value = htmlspecialchars($value);
+        if (!is_string($value)){
+            $this->errors[$name][] = "veuillez saisir une chaine de charactères";
         }
     }
 

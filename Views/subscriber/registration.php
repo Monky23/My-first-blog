@@ -1,16 +1,18 @@
 <?php if (isset($_SESSION['errors'])) : ?>
 
-    <?php foreach ($_SESSION['errors'] as $errorsArray) : ?>
-        <?php foreach ($errorsArray as $errors) : ?>
-            <div class="alert alert-danger">
-                <?php foreach ($errors as $error) : ?>
-                    <li><?= $error ?></li>
-                <?php endforeach ?>
-            </div>
-        <?php endforeach ?>
+<?php foreach ($_SESSION['errors'] as $errorsArray) : ?>
+    <?php foreach ($errorsArray as $errors) : ?>
+        <div class="alert alert-danger">
+            <?php foreach ($errors as $error) : ?>
+                <li><?= $error ?></li>
+            <?php endforeach ?>
+        </div>
     <?php endforeach ?>
+<?php endforeach ?>
 
 <?php endif ?>
+
+<?php session_destroy(); ?>
 <div class="registration-form">
 
     <form action="/registration" method="POST">

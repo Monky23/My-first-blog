@@ -95,10 +95,10 @@ class UserController extends Controller
         $validator = new Validator($_POST);
 
         $errors = $validator->validate([
-            'username' => ['required', 'min:3'],
-            'email' => ['required'],
-            'password' => ['required'],
-            'password_retype' => ['required']
+            'username' => ['required', 'min:3', 'onlyString'],
+            'email' => ['required', 'onlyString'],
+            'password' => ['required', 'onlyString'],
+            'password_retype' => ['required', 'onlyString']
         ]);
 
         if ($errors) {

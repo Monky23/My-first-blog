@@ -108,8 +108,14 @@ class UserController extends Controller
         }
         $user = new User($this->getDB());
         $array = $_POST;
-        $array["password"] = password_hash($array["password_retype"], PASSWORD_ARGON2I);
-        unset($array["password_retype"]);
+        if ($array["password"] === $array["password_retype"]) {
+            $array["password"] = password_hash($array["password"], PASSWORD_ARGON2I);
+            unset($array["password_retype"]);
+        } else {
+            throw new Exception('les deux mots de passe doivent être identiques');
+        }
+        if (!filter_var($array["email"], FILTER_VALIDATE_EMAIL))
+            throw new Exception("Veuillez saisir une adresse mail valide");
         $result = $user->create($array);
         if ($result) {
             return header('Location: /login');

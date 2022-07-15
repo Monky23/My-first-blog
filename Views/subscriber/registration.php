@@ -12,7 +12,6 @@
 
 <?php endif ?>
 
-<?php session_destroy(); ?>
 <div class="registration-form">
 
     <form action="/registration" method="POST">

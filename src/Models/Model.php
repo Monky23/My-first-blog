@@ -26,12 +26,6 @@ class Model
         return $this->query("SELECT * FROM {$this->table} WHERE id = ? LIMIT 1", [$id], true);
     }
 
-    /*public function getOne(int $id) {
-        $req = "SELECT * FROM {$this->table} WHERE id = ? LIMIT 1";
-        $stmt = $this->prepare($req , [$id]);
-        return $this->query($stmt)->fetch();
-    }*/
-
     public function create(array $data, ?array $relations = null)
     {
         $firstParenthesis = "";
@@ -65,7 +59,7 @@ class Model
         return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} WHERE id = :id", $data);
     }
 
-    public function delete(int $id): bool //TODO : nommage a revoir
+    public function delete(int $id): bool
     {
         return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id]);
     }

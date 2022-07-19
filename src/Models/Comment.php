@@ -13,13 +13,6 @@ class Comment extends Model
         WHERE post_id = ?", [$post], true);
     }
 
-    /*public function getPublishedCommentsByPosts(): array
-    {
-        return $this->query("SELECT * FROM {$this->table} 
-        WHERE comments.published = 1
-        ORDER BY created_date DESC");
-    }*/
-
     public function getPostByComment()
     {
         return $this->query(

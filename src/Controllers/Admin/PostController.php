@@ -15,8 +15,6 @@ class PostController extends Controller
         try {
             $this->isAdmin();
 
-            //var_dump($this->isAdmin());
-
             $posts = (new Post($this->getDB()))->all();
     
             return $this->view('admin.post.index', compact('posts'));

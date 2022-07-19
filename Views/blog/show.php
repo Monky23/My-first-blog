@@ -62,6 +62,12 @@
             </div>
             <div class="form-group">
 
+            <div class="form-check form-group">
+                <input type="hidden" name="published" value="0">
+                <input type="checkbox" name="published" value="1" class="form-check-input" id="published">
+                <label class="form-check-label" for="published">Approuvé</label>
+            </div>
+
             </div>
             <button type="submit" class="btn btn-primary"><?= isset($params['comment']) ? 'Enregistrer les modifications' : 'Enregistrer mon commentaire' ?></button>
         </form>

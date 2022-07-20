@@ -66,3 +66,44 @@ the user has the possibility to modify the title, caption, author
 and content fields.
 
 In the footer menu, there should be a link to access the blog administration.
+
+## Installation
+
+Technologies used
+
+- PHP 8.1.4
+- Maria DB 10.4.24
+- Composer
+
+Installation
+
+- Clone or download this repository.
+
+- Use the file dump.sql to import the Database.
+
+- Replace the datbase informations by yours
+  at the lines 10 to 13 in the file My-first-blog\public\index.php
+
+ define('DB_NAME', '[YOUR DATABASE NAME]');
+ define('DB_HOST', '[YOUR DATABASE HOST]');
+ define('DB_USER', '[YOUR DATABASE USERNAME]');
+ define('DB_PWD', '[YOUR DATABASE PASSWORD]');
+
+- In  your terminal use the command "composer install"
+  and "composer dump-autoload" to use composer dependencies.
+
+- Use the command "php -S localhost:8079 -t public" in your terminal
+  and type localhost:8079 in your address bar to be sure to access the blog.
+
+Login par défaut
+
+ -USER
+ username: albert
+ password: albert
+ -ADMIN
+ username: jeanmi
+ password: jeanmi
+
+## Author
+
+Jean Michel La Paix

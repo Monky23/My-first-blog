@@ -21,7 +21,7 @@
     <div class="col-md-4 col-sm-4 col-lg-4">
         <img src="img/issuer_VODK5A.svg" alt="photo" class="img-responsive" width="100%">
         <a href="https://directory.opquast.com/fr/certificat/VODK5A/">Lien faire l'authenfication du certificat.</a>
-        <a href="../../public/cv.pdf" download="CV de Jean Michel La Paix">Télecharger mon CV</a>
+        <a href="cv.pdf" download="CV de Jean Michel La Paix">Télecharger mon CV</a>
     </div>
 </section>
 

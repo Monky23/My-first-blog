@@ -43,6 +43,9 @@
             <li class="nav-item">
               <a class="nav-link" href="/registration">Inscription</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pop">404</a>
+            </li>
           </ul>
           <ul class="navbar-nav ml-auto">
             <?php if (isset($_SESSION['auth'])) : ?>

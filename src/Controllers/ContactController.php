@@ -29,7 +29,7 @@ class ContactController extends Controller
         }
 
         $email_to = "tootooyootoo23@gmail.com";
-        $email_subject = "Le sujet de votre email";
+        $email_subject = "Un visiteur du blog vous envoie un message !";
 
         $array = $_POST;
         $name = $array["name"];

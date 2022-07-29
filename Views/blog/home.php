@@ -24,9 +24,9 @@
         <a href="cv.pdf" download="CV de Jean Michel La Paix">Télecharger mon CV</a>
     </div>
 </section>
-
+<?php require VIEWS . 'contact.php'; ?>
 <h2>Contact</h2>
-<form class="contact mb-5">
+<form class="contact mb-5" name="contact_form" method="post" action="contact.php">
     <div class="mb-3">
         <label for="name" class="form-label">Nom<span>*</span></label>
         <input type="text" class="form-control" id="name" required>

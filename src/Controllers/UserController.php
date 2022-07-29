@@ -60,7 +60,7 @@ class UserController extends Controller
 
         $errors = $validator->validate([
             'username' => ['required', 'min:3', 'onlyString'],
-            'email' => ['required', 'onlyString'],
+            'email' => ['required', 'onlyString', 'checkMail'],
             'password' => ['required', 'onlyString'],
             'password_retype' => ['required', 'onlyString']
         ]);
@@ -78,8 +78,6 @@ class UserController extends Controller
         } else {
             throw new Exception('les deux mots de passe doivent être identiques');
         }
-        if (!filter_var($array["email"], FILTER_VALIDATE_EMAIL))
-            throw new Exception("Veuillez saisir une adresse mail valide");
         $result = $user->create($array);
         if ($result) {
             return header('Location: /login');

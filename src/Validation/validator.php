@@ -25,6 +25,9 @@ class Validator
                         case 'onlyString':
                             $this->_checkAndSanitizeStr($name, $this->data[$name]);
                             break;
+                        case 'checkMail':
+                            $this->isEmail($name, $this->data[$name]);
+                            break;
                         case substr($rule, 0, 3) === 'min':
                             $this->min($name, $this->data[$name], $rule);
                         default:
@@ -62,6 +65,13 @@ class Validator
         $value = htmlspecialchars($value);
         if (!is_string($value)){
             $this->errors[$name][] = "veuillez saisir une chaine de charactères";
+        }
+    }
+
+    private function isEmail(string $name, string $value){
+        $value = filter_var($value, FILTER_VALIDATE_EMAIL);
+        if(!filter_var($value, FILTER_VALIDATE_EMAIL)){
+            $this->errors[$name][] = "veuillez saisir une adresse mail valide";
         }
     }
 

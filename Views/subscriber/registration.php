@@ -11,6 +11,8 @@
     <?php endforeach ?>
 
 <?php endif ?>
+<div id="contact"></div>
+<?php session_destroy(); ?>
 
 <div class="registration-form">
 

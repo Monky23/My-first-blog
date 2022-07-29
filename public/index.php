@@ -12,9 +12,6 @@ define('DB_HOST', '127.0.0.1');
 define('DB_USER', 'root');
 define('DB_PWD', '');
 
-//echo "<pre>" . print_r($_SERVER , true) . "</pre>";
-//echo "<pre>" . print_r($_REQUEST , true) . "</pre>";
-
 $router = new Router($_SERVER["REQUEST_URI"]);
 
 $router->get('/', 'Controllers\BlogController@welcome');
@@ -28,6 +25,8 @@ $router->get('/logout', 'Controllers\UserController@logout');
 $router->get('/registration', 'Controllers\UserController@registration');
 $router->post('/registration', 'Controllers\UserController@registrationPost');
 
+$router->get('/contact', 'Controllers\ContactController@contact');
+$router->post('/contact', 'Controllers\ContactController@contactPost');
 
 $router->get('/admin/posts', 'Controllers\Admin\PostController@index');
 $router->get('/admin/posts/create', 'Controllers\Admin\PostController@create');

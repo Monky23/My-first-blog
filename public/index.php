@@ -35,6 +35,13 @@ $router->post('/admin/posts/delete/:id', 'Controllers\Admin\PostController@delet
 $router->get('/admin/posts/edit/:id', 'Controllers\Admin\PostController@edit');
 $router->post('/admin/posts/edit/:id', 'Controllers\Admin\PostController@update');
 
+$router->get('/admin/comments', 'Controllers\Admin\CommentAdminController@index');
+$router->get('/admin/comments/create', 'Controllers\Admin\CommentAdminController@create');
+$router->post('/admin/comments/create', 'Controllers\Admin\CommentAdminController@createComment');
+$router->post('/admin/comments/delete/:id', 'Controllers\Admin\CommentAdminController@delete');
+$router->get('/admin/comments/edit/:id', 'Controllers\Admin\CommentAdminController@edit');
+$router->post('/admin/comments/edit/:id', 'Controllers\Admin\CommentAdminController@update');
+
 $router->get('/subscriber', 'Controllers\Subscriber\CommentController@index');
 $router->get('/subscriber/comments/create', 'Controllers\Subscriber\CommentController@create');
 $router->post('/subscriber/comments/create', 'Controllers\Subscriber\CommentController@createComment');

@@ -13,14 +13,14 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($params['posts'] as $post) : ?>
+        <?php foreach ($params['comments'] as $comment) : ?>
             <tr>
-                <th scope="row"><?= (int)$post->id ?></th>
-                <td><?= htmlspecialchars($post->title) ?></td>
-                <td><?= $post->getCreatedAt() ?></td>
+                <th scope="row"><?= (int)$comment->id ?></th>
+                <td><?= htmlspecialchars($comment->title) ?></td>
+                <td><?= $comment->getCreatedAt() ?></td>
                 <td>
-                    <a href="/admin/posts/edit/<?= (int)$post->id ?>" class="btn btn-warning">Modifier</a>
-                    <form action="/admin/posts/delete/<?= (int)$post->id ?>" method="POST" class="d-inline">
+                    <a href="/admin/comments/edit/<?= (int)$comment->id ?>" class="btn btn-warning">Modifier</a>
+                    <form action="/admin/comments/delete/<?= (int)$comment->id ?>" method="POST" class="d-inline">
                         <button type="submit" class="btn btn-danger">Supprimer</button>
                     </form>
                 </td>

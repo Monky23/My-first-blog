@@ -1,11 +1,17 @@
 <?php
 
 namespace Models;
+use DateTime;
 
 class Comment extends Model
 {
 
     protected $table = 'comments';
+
+    public function getCreatedAt(): string //à implémenter dans un Trait
+    {
+        return (new DateTime($this->created_date))->format('d/m/Y à H:i');
+    }
 
     public function getByPost(string $post): Comment
     {
@@ -21,5 +27,12 @@ class Comment extends Model
             WHERE comment.post_id = p.id",
             [$this->id]
         );
+    }
+
+    public function getUnpublishedComments(): array
+    {
+        return $this->query("SELECT * FROM {$this->table} 
+        WHERE comments.published = 0
+        ORDER BY created_date DESC");
     }
 }

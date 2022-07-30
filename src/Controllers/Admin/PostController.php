@@ -19,18 +19,22 @@ class PostController extends Controller
     
             return $this->view('admin.post.index', compact('posts'));
         } catch (Exception $e) {
-            // retourner une erreur
+            // echo $e->getMessage();
         }
 
     }
 
     public function create()
     {
-        $this->isAdmin();
+        try {
+            $this->isAdmin();
 
-        $tags = (new Tag($this->getDB()))->all();
-
-        return $this->view('admin.post.form', compact('tags'));
+            $tags = (new Tag($this->getDB()))->all();
+    
+            return $this->view('admin.post.form', compact('tags'));
+        } catch (Exception $e) {
+            // echo $e->getMessage();
+        }
     }
 
     public function createPost()
@@ -52,18 +56,23 @@ class PostController extends Controller
                 return header('Location: /admin/posts');
             }
         } catch (Exception $e) {
-            // retourner une erreur
+            // echo $e->getMessage();
         }
     }
 
     public function edit(int $id)
     {
-        $this->isAdmin();
+        try {
+            $this->isAdmin();
 
-        $post = (new Post($this->getDB()))->findById($id);
-        $tags = (new Tag($this->getDB()))->all();
+            $post = (new Post($this->getDB()))->findById($id);
+            $tags = (new Tag($this->getDB()))->all();
+    
+            return $this->view('admin.post.form', compact('post', 'tags'));
+        } catch (Exception $e) {
+            // echo $e->getMessage();
+        }
 
-        return $this->view('admin.post.form', compact('post', 'tags'));
     }
 
     public function update(int $id)

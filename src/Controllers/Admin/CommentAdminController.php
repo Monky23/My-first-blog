@@ -12,7 +12,9 @@ class CommentAdminController extends Controller
     {
         $this->isAdmin();
 
-        $comments = (new Comment($this->getDB()))->all();
+        //$comments = (new Comment($this->getDB()))->all();
+        $comment = new Comment($this->getDB());
+        $comments = $comment->getUnpublishedComments();
         
         return $this->view('admin.comment.index', compact('comments'));
     }

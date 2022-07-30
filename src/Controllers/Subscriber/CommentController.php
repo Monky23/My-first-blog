@@ -44,7 +44,7 @@ class CommentController extends Controller {
 
         $comment = (new Comment($this->getDB()))->findById($id);
 
-        return $this->view('subscriber.comment.formcomment', compact('comment'));
+        return $this->view('subscriber.comment.form', compact('comment'));
     }
 
     public function update(int $id)

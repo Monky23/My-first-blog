@@ -44,7 +44,7 @@
               <a class="nav-link" href="/registration">Inscription</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/pop">404</a>
+              <a class="nav-link" href="/contact">Contact</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">

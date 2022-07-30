@@ -1,8 +1,10 @@
 <?php
 namespace Controllers;
 use Validation\Validator;
-ini_set("SMTP","tls://smtp.gmail.com");
-ini_set("smtp_port","587");
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+//require 'vendor/autoload.php';
 
 class ContactController extends Controller
 {
@@ -28,25 +30,88 @@ class ContactController extends Controller
             exit;
         }
 
-        $email_to = "tootooyootoo23@gmail.com";
-        $email_subject = "Un visiteur du blog vous envoie un message !";
+        $this->_sendMail();
 
-        $array = $_POST;
-        $name = $array["name"];
-        $firstname = $array["firstname"];
-        $email = $array["email"];
-        $message = $array["message"];
+    }
 
-        $email_message = "Détail.\n\n";
-        $email_message .= "Nom: ".$name."\n";
-        $email_message .= "Prenom: ".$firstname."\n";
-        $email_message .= "Email: ".$email."\n";
-        $email_message .= "Message: ".$message."\n";
+
+    private function _sendMail() : bool {
      
-        $headers = 'From: '.$email."\r\n".
-        'Reply-To: '.$email."\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-        mail($email_to, $email_subject, $email_message, $headers);
+        //Create an instance; passing `true` enables exceptions
+        $mail = new PHPMailer(true);
+        try {
+            (array) $parameters = $_POST;
+            $email_message = $this->_prepareMessage($parameters);
+            $this->_getMailConfig($mail);
+            $this->_setRecipients($mail , $parameters);
+            $this->_setContent($mail , $email_message);
+            
+            return $mail->send() !== false;
+
+        } catch (Exception $e) {
+            return false;
+            //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+    }
+
+
+    private function _getMailConfig(PHPMailer $mail): void {
+        //Server settings
+        $mail->SMTPDebug = 0;                               //Enable verbose debug output
+        $mail->isSMTP();                                    //Send using SMTP
+        $mail->Host       = 'smtp-relay.sendinblue.com';    //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                           //Enable SMTP authentication
+        $mail->Username   = 'luffy6377@live.fr';            //SMTP username
+        $mail->Password   = 'bwKNxMDZBard5GL8';             //SMTP password
+        $mail->SMTPSecure = "none";                         //PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port       = 587;                            //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    }
+
+
+    private function _setRecipients(PHPMailer $mail , array $parameters): void {
+        $fullName = $parameters["firstname"] . $parameters["name"];
+        $mail->setFrom(
+            $parameters["email"], 
+            $fullName
+        );
+        $mail->addAddress(
+            "tootooyootoo23@gmail.com", 
+            'Webmaster du site'
+        );
+        $mail->addReplyTo(
+            $parameters["email"], 
+            $fullName
+        );
+    }
+
+
+    private function _setContent(PHPMailer $mail , $email_message) : void {
+        $mail->isHTML(false);                                  //Set email format to HTML
+        $mail->Subject = "Un visiteur du blog vous envoie un message !";
+        $mail->Body    = $email_message;
+        $mail->AltBody = $email_message;
+    }
+
+
+    private function _prepareMessage(array $parameters): string {
+        
+        $email_message = "Détail.\n\n";
+        $email_message .= sprintf("Nom: %s \n" , $parameters["name"]);
+        $email_message .= sprintf("Prenom: %s \n" , $parameters["firstname"]);
+        $email_message .= sprintf("Email: %s \n" , $parameters["email"]);
+        $email_message .= sprintf("Message: %s \n" , $parameters["message"]);
+
+        return $email_message;
     }
 }
 
+/*
+$prenom = "Adrien";
+$nom = "Tilliard";
+$age = 37;
+
+$phrase = "Je m'appelle " . $prenom . $nom . " et j'ai " . $age . ".";
+$phrase = sprintf("Je m'appelle %s %s et j'ai %i.",
+                $prenom,
+                $nom,
+                $age);*/

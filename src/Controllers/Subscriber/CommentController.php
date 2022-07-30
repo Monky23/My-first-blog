@@ -20,8 +20,6 @@ class CommentController extends Controller {
     {
         $this->isSubscriber ()  || $this->isAdmin();
 
-        $tags = (new Comment($this->getDB()))->all();
-
         return $this->view('blog.post.show');
     }
 
@@ -56,7 +54,7 @@ class CommentController extends Controller {
         $result = $comment->update($id, $_POST);
 
         if ($result) {
-            return header('Location: /');
+            return header('Location: /posts');
         }
     }
 

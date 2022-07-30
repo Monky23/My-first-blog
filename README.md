@@ -2,6 +2,18 @@
 # My-first-blog
 
 Create a blog from scratch without framework.
+Uml diagrams need to be create.
+PHP and Mysql servers are necessary in local.
+A database with different table need to be create.
+Links to differents parts of the site are necessary.
+Form to contact the webmaster is necessary.
+Forms to add update or delete the posts and the comments are necessary.
+All datas entered in the différents input need to be control against xss fails
+and Sql injections.
+A MVC structure need to be use with OOP.
+Only Admin can access to the dashboard of the backend part.
+Only Login subscribers can write comments.
+A database with different table need to be create.
 
 ## Description of the need
 
@@ -88,6 +100,13 @@ Installation
  define('DB_HOST', '[YOUR DATABASE HOST]');
  define('DB_USER', '[YOUR DATABASE USERNAME]');
  define('DB_PWD', '[YOUR DATABASE PASSWORD]');
+
+- replace SMTP username and SMTP password by yours in the file My-first-blog\src\Controllers\ContactController.php
+in the _getMailConfig() function
+at the line 64 and 65
+
+$mail->Username   = 'yourusername@example.com';
+$mail->Password   = 'yourpassword';
 
 - In  your terminal use the command "composer install"
   and "composer dump-autoload" to use composer dependencies.

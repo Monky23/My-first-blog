@@ -104,14 +104,3 @@ class ContactController extends Controller
         return $email_message;
     }
 }
-
-/*
-$prenom = "Adrien";
-$nom = "Tilliard";
-$age = 37;
-
-$phrase = "Je m'appelle " . $prenom . $nom . " et j'ai " . $age . ".";
-$phrase = sprintf("Je m'appelle %s %s et j'ai %i.",
-                $prenom,
-                $nom,
-                $age);*/

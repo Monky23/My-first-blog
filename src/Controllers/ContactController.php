@@ -32,6 +32,8 @@ class ContactController extends Controller
 
         $this->_sendMail();
 
+        return $this->view('sendmailconfirm');
+
     }
 
 

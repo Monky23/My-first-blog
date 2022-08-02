@@ -31,7 +31,7 @@ class CommentController extends Controller {
         $result = $comment->create($_POST);
     
         if ($result) {
-            return header('Location: /posts');
+            return $this->view('commentinwait');
         }
 
 
@@ -55,7 +55,7 @@ class CommentController extends Controller {
             $result = $comment->update($id, $_POST);
     
             if ($result) {
-                return $this->view('commentinwait');
+                return $this->view('subscriber.comment.form');
             }
             
         }

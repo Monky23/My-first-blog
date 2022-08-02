@@ -52,9 +52,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="/logout">Se déconnecter</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/admin/posts">Posts admin</a>
-              </li>
             <?php endif ?>
           </ul>
         </div>

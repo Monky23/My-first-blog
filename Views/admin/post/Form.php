@@ -49,3 +49,26 @@
     <input type="submit" class="btn btn-primary"><?= isset($params['post']) ?
     'Enregistrer les modifications' : 'Enregistrer mon article' ?>
 </form>
+<?php if (isset($params['post'])) : ?>
+<h2>Commentaires</h2>
+    <div id="comments-listing" class="row">
+        <?php foreach ($params['post']->getComments() as $comment) : ?>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5><?= htmlspecialchars($comment->title) ?></h5>
+                <p class="badge bg-dark">
+                    De: <?= htmlspecialchars($comment->username) ?>
+                </p><br>
+                <small class="text-info">Dernière modification le:
+                    <?= $comment->created_date ?></small>
+                <p><?= nl2br(htmlspecialchars($comment->content)) ?></p>
+
+                <a href="/admin/comments/edit/<?= (int)$comment->id ?>" class="btn btn-warning">Modifier</a>
+                <form action="/admin/comments/delete/<?= (int)$comment->id ?>" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                </form><br>
+
+        </div>
+    </div>
+        <?php endforeach ?>
+<?php endif ?>

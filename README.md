@@ -4,6 +4,8 @@
 Create a blog from scratch without framework.
 Uml diagrams need to be create.
 PHP and Mysql servers are necessary in local.
+Use composer Autoloader to charge every class.
+Use composer to use some libraries.
 A database with different table need to be create.
 Links to differents parts of the site are necessary.
 Form to contact the webmaster is necessary.
@@ -13,7 +15,8 @@ and Sql injections.
 A MVC structure need to be use with OOP.
 Only Admin can access to the dashboard of the backend part.
 Only Login subscribers can write comments.
-A database with different table need to be create.
+Comments need to be approoved before to be published.
+A dump of the database is necessary.
 
 ## Description of the need
 
@@ -107,19 +110,22 @@ at the line 64 and 65
 
 $mail->Username   = 'yourusername@example.com';
 $mail->Password   = 'yourpassword';
+$mail->Host       = 'yourSMTPHost';
+$mail->SMTPSecure = 'choose your encryption';
+$mail->Port       = 'Use your number port'
 
 - In  your terminal use the command "composer install"
   and "composer dump-autoload" to use composer dependencies.
 
 - Use the command "php -S localhost:8079 -t public" in your terminal
-  and type localhost:8079 in your address bar to be sure to access the blog.
+  and type localhost:8079 in your address bar to be sure to access to the blog.
 
 Login par défaut
 
- -USER
+- USER
  username: albert
  password: albert
- -ADMIN
+- ADMIN
  username: jeanmi
  password: jeanmi
 

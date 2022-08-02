@@ -32,7 +32,11 @@ class ContactController extends Controller
 
         $this->_sendMail();
 
-        return $this->view('sendmailconfirm');
+        if ($this->_sendmail()) {
+            return $this->view('sendmailconfirm');
+        } else {
+            return $this->view('contact');
+        }
 
     }
 
@@ -61,12 +65,12 @@ class ContactController extends Controller
         //Server settings
         $mail->SMTPDebug = 0;                               //Enable verbose debug output
         $mail->isSMTP();                                    //Send using SMTP
-        $mail->Host       = 'smtp-relay.sendinblue.com';    //Set the SMTP server to send through
+        $mail->Host       = 'yourSMTPHost';    //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                           //Enable SMTP authentication
-        $mail->Username   = 'luffy6377@live.fr';            //SMTP username
-        $mail->Password   = 'bwKNxMDZBard5GL8';             //SMTP password
-        $mail->SMTPSecure = "none";                         //PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 587;                            //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Username   = 'yourSMTPID';            //SMTP username
+        $mail->Password   = 'yourSMTPpassword';             //SMTP password
+        $mail->SMTPSecure = "tls";                         //PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port       = 587;                       //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     }
 
 
@@ -77,7 +81,7 @@ class ContactController extends Controller
             $fullName
         );
         $mail->addAddress(
-            "tootooyootoo23@gmail.com", 
+            "myblog@numeric-experiences.fr", 
             'Webmaster du site'
         );
         $mail->addReplyTo(

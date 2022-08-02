@@ -13,8 +13,5 @@
         <label for="content">Contenu de l'article</label>
         <textarea name="content" id="content" rows="8" class="form-control"><?= $params['comment']->content ?? '' ?></textarea>
     </div>
-    <div class="form-group">
-
-    </div>
     <button type="submit" class="btn btn-primary"><?= isset($params['comment']) ? 'Enregistrer les modifications' : 'Enregistrer mon commentaire' ?></button>
-</form>  
+</form>

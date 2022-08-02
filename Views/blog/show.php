@@ -20,7 +20,7 @@
 
 <h2>Commentaires</h2>
 <div id="comments-listing" class="row">
-    <?php foreach ($params['post']->getComments() as $comment) : ?>
+    <?php foreach ($params['post']->getPublichedComments() as $comment) : ?>
         <div class="card mb-3">
             <div class="card-body">
                 <h5><?= htmlspecialchars($comment->title) ?></h5>
@@ -30,17 +30,11 @@
                 <small class="text-info">Dernière modification le:
                     <?= $comment->created_date ?></small>
                 <p><?= nl2br(htmlspecialchars($comment->content)) ?></p>
-                <?php if (isset($_SESSION['auth'])) : ?>
-                    <a href="/subscriber/comments/edit/<?= (int)$comment->id ?>" class="btn btn-warning">Modifier</a>
-                    <form action="/subscriber/comments/delete/<?= (int)$comment->id ?>" method="POST" class="d-inline">
-                        <button type="submit" class="btn btn-danger">Supprimer</button>
-                    </form><br>
-                <?php endif ?>
             </div>
         </div>
     <?php endforeach ?>
 
-    <?php if (isset($_SESSION['auth'])) : ?>
+    <?php if (isset($_SESSION['role'])) : ?>
         <h2>Un commentaire?</h2>
         <h3><?= $params['comment']->title ?? 'Exprimez-vous à l\'aide de ce formulaire' ?></h3>
 
@@ -60,19 +54,10 @@
                 <label for="content">Saisissez votre commentaire ici</label>
                 <textarea name="content" id="content" rows="8" class="form-control"><?= $params['comment']->content ?? '' ?></textarea>
             </div>
-            <div class="form-group">
-
-            <div class="form-check form-group">
-                <input type="hidden" name="published" value="0">
-                <input type="checkbox" name="published" value="1" class="form-check-input" id="published">
-                <label class="form-check-label" for="published">Approuvé</label>
-            </div>
-
-            </div>
             <button type="submit" class="btn btn-primary"><?= isset($params['comment']) ? 'Enregistrer les modifications' : 'Enregistrer mon commentaire' ?></button>
         </form>
 
     <?php endif ?>
-    <?php if (!isset($_SESSION['auth'])) : ?>
+    <?php if (!isset($_SESSION['role'])) : ?>
         <a href="/login" class="btn btn-success my-3">ajouter un commentaire</a>
     <?php endif ?>

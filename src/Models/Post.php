@@ -35,7 +35,7 @@ class Post extends Model
         ", [$this->id]);
     }
 
-    public function getComments()
+    public function getPublichedComments()
     {
         return $this->query("
             SELECT c.* FROM comments c
@@ -44,12 +44,20 @@ class Post extends Model
         ", [$this->id]);
     }
 
+    public function getUnpublishedCommentsByPostId(): array
+    {
+        return $this->query("
+            SELECT c.* FROM comments c
+            WHERE c.post_id = ?
+            AND c.published = 0
+        ", [$this->id]);
+    }
+
     public function create(array $data, ?array $relations = null)
     {
         parent::create($data);
 
         $id = $this->db->getPDO()->lastInsertId();
-        //var_dump($id);
 
         foreach ($relations as $tagId) {
             $stmt = $this->db->getPDO()->prepare("INSERT post_tag (post_id, tag_id) VALUES (?, ?)");

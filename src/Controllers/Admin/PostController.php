@@ -19,7 +19,7 @@ class PostController extends Controller
     
             return $this->view('admin.post.index', compact('posts'));
         } catch (Exception $e) {
-            // echo $e->getMessage();
+            echo $e->getMessage();
         }
 
     }
@@ -33,7 +33,7 @@ class PostController extends Controller
     
             return $this->view('admin.post.form', compact('tags'));
         } catch (Exception $e) {
-            // echo $e->getMessage();
+            echo $e->getMessage();
         }
     }
 
@@ -56,7 +56,7 @@ class PostController extends Controller
                 return header('Location: /admin/posts');
             }
         } catch (Exception $e) {
-            // echo $e->getMessage();
+            echo $e->getMessage();
         }
     }
 
@@ -70,7 +70,7 @@ class PostController extends Controller
     
             return $this->view('admin.post.form', compact('post', 'tags'));
         } catch (Exception $e) {
-            // echo $e->getMessage();
+            echo $e->getMessage();
         }
 
     }

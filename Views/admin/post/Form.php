@@ -52,7 +52,7 @@
 <?php if (isset($params['post'])) : ?>
 <h2>Commentaires</h2>
     <div id="comments-listing" class="row">
-        <?php foreach ($params['post']->getComments() as $comment) : ?>
+        <?php foreach ($params['post']->getPublichedComments() as $comment) : ?>
         <div class="card mb-3">
             <div class="card-body">
                 <h5><?= htmlspecialchars($comment->title) ?></h5>

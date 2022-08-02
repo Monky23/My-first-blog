@@ -29,11 +29,13 @@ class UserController extends Controller
         }
 
         $user = (new User($this->getDB()))->getByUsername($_POST['username']);
-
+        
         if (password_verify($_POST['password'], $user->password)) {
-            if ($_SESSION['auth'] = (int) $user->admin) {
+            $_SESSION['role'] = $user->admin === 1 ? "admin" : "sub";
+
+            if ($_SESSION['role'] === "admin") {
                 return header('Location: /admin/posts');
-            } elseif ($_SESSION['auth'] = (int) $user->subscriber) {
+            } elseif ($_SESSION['role'] === "sub") {
                 return header('Location: /');
             }
         } else {

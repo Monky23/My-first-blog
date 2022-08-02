@@ -48,7 +48,7 @@
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-            <?php if (isset($_SESSION['auth'])) : ?>
+            <?php if (isset($_SESSION['role'])) : ?>
               <li class="nav-item">
                 <a class="nav-link" href="/logout">Se déconnecter</a>
               </li>

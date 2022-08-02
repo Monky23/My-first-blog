@@ -21,6 +21,7 @@ class CommentAdminController extends Controller
     public function create()
     {
         $this->isAdmin();
+        $this->isSubscriber();
 
         return $this->view('admin.comment.form');
     }
@@ -28,6 +29,7 @@ class CommentAdminController extends Controller
     public function createComment()
     {
         $this->isAdmin();
+        $this->isSubscriber();
 
         $comment = new Comment($this->getDB());
 
@@ -49,14 +51,16 @@ class CommentAdminController extends Controller
 
     public function update(int $id)
     {
-        $this->isAdmin();
 
-        $comment = new Comment($this->getDB());
+        if($this->isAdmin()) {
 
-        $result = $comment->update($id, $_POST);
+            $comment = new Comment($this->getDB());
 
-        if ($result) {
-            return header('/admin/comments');
+            $result = $comment->update($id, $_POST);
+    
+            if ($result) {
+                return header('Location: /admin/comments');
+            }
         }
     }
 

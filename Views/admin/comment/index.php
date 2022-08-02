@@ -1,7 +1,6 @@
 <h1>Administration des articles</h1>
 
-<a href="/admin/posts/create" class="btn btn-success my-3">Créer un nouvel article</a>
-<a href="/admin/comments" class="btn btn-success my-3">controle des commentaires</a>
+<a href="/admin/posts" class="btn btn-success my-3">Retour à la liste des articles</a>
 
 <table class="table">
     <thead>
@@ -16,6 +15,7 @@
         <?php foreach ($params['comments'] as $comment) : ?>
             <tr>
                 <th scope="row"><?= (int)$comment->id ?></th>
+                <td><?= (int)$comment->post_id ?></td>
                 <td><?= htmlspecialchars($comment->title) ?></td>
                 <td><?= $comment->getCreatedAt() ?></td>
                 <td>

@@ -18,55 +18,60 @@ class CommentController extends Controller {
 
     public function create()
     {
-        $this->isSubscriber ()  || $this->isAdmin();
+        $this->isAdmin() || $this->isSubscriber();
+            return $this->view('blog.post.show');
 
         return $this->view('blog.post.show');
     }
 
     public function createComment()
     {
-        $this->isSubscriber()  || $this->isAdmin();
-
         $comment = new Comment($this->getDB());
 
         $result = $comment->create($_POST);
-
+    
         if ($result) {
             return header('Location: /posts');
         }
+
+
     }
 
     public function edit(int $id)
     {
-        $this->isSubscriber() || $this->isAdmin();
+        if ($this->isAdmin() || $this->isSubscriber()) {
 
-        $comment = (new Comment($this->getDB()))->findById($id);
-
-        return $this->view('subscriber.comment.form', compact('comment'));
+            $comment = (new Comment($this->getDB()))->findById($id);
+    
+            return $this->view('subscriber.comment.form', compact('comment'));
+        }
     }
 
     public function update(int $id)
     {
-        $this->isSubscriber() || $this->isAdmin();
+        if ($this->isAdmin() || $this->isSubscriber()) {
+            $comment = new Comment($this->getDB());
 
-        $comment = new Comment($this->getDB());
-
-        $result = $comment->update($id, $_POST);
-
-        if ($result) {
-            return header('Location: /posts');
+            $result = $comment->update($id, $_POST);
+    
+            if ($result) {
+                return $this->view('commentinwait');
+            }
+            
         }
     }
 
     public function delete(int $id)
     {
-        $this->isSubscriber()  || $this->isAdmin();
+        if ($this->isAdmin() || $this->isSubscriber()) {
 
-        $comment = new Comment($this->getDB());
-        $result = $comment->delete($id);
-
-        if ($result) {
-            return header('Location: /posts');
+            $comment = new Comment($this->getDB());
+            $result = $comment->delete($id);
+    
+            if ($result) {
+                return header('Location: /posts');
+            }
         }
+
     }
 }

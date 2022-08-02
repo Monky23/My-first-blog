@@ -38,15 +38,15 @@ abstract class Controller
      */
     protected function isAdmin(): bool
     {        
-        if (isset($_SESSION['auth']) && $_SESSION['auth'] === 1)
+        if (isset($_SESSION['role']) && $_SESSION['role'] === "admin")
             return true;
 
-        throw new Exception("Vous n'êtes pas admin");
+        //throw new Exception("Vous n'êtes pas admin");
     }
 
     protected function isSubscriber(): bool
     {
-        if (isset($_SESSION['auth']) && $_SESSION['auth'] === 1) {
+        if (isset($_SESSION['role']) && $_SESSION['role'] === "sub") {
             return true;
         } else {
             return header('Location: /login');

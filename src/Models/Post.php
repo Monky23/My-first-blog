@@ -49,7 +49,7 @@ class Post extends Model
         parent::create($data);
 
         $id = $this->db->getPDO()->lastInsertId();
-        var_dump($id);
+        //var_dump($id);
 
         foreach ($relations as $tagId) {
             $stmt = $this->db->getPDO()->prepare("INSERT post_tag (post_id, tag_id) VALUES (?, ?)");

@@ -1,7 +1,7 @@
 <h2>Un commentaire</h2>
 <h3><?= $params['comment']->title ?? 'Exprimez-vous à l\'aide de ce formulaire' ?></h3>
 
-<form action="<?= isset($params['comment']) ? "/admin/comments/edit/{$params['comment']->id}" : ?>" method="POST">
+<form action="<?= isset($params['comment']) ? "/subscriber/comments/edit/{$params['comment']->id}" : "/subscriber/comments/create" ?>" method="POST">
     <div class="form-group">
         <input type="hidden" class="form-control" name="post_id" id="post_id" value="<?= (int)$params['comment']->id ?>">
     </div>

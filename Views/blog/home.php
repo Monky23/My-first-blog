@@ -25,7 +25,8 @@
     </div>
 </section>
 <div>
-    <a href="/contact"><img src="img/fakeform.png" alt="photo" class="img-responsive" width="100%"></a>
+    <a href="/contact"><img src="img/fakeform.png" alt="photo" 
+    class="img-responsive" width="100%" title='lien vers le formulaire de contact'></a>
 </div>
 <h2>Localisation</h2>
 <div id="g-map" class="mb-3">
